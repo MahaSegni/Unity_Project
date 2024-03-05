@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     private void ProcessInputs() {
         xInput = Input.GetAxis("Horizontal");
         zInput = Input.GetAxis("Vertical");
+
+              transform.Rotate(-zInput, 0f, xInput, Space.World);
     }
     private void Move() {
         rb.AddForce(new Vector3(xInput , 0, zInput) * moveSpeed);
